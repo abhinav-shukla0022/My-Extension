@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Tracker Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Time Tracker Options</h1>
+
+    <div>
+      <h2>Tracked Domains</h2>
+      <textarea id="trackedDomains" rows="5" cols="50"></textarea>
+      <p>Enter domains to track, one per line (e.g., facebook.com).</p>
+    </div>
+
+    <div>
+      <h2>Daily Goal (minutes)</h2>
+      <input type="number" id="dailyGoal" min="0">
+    </div>
+
+    <div>
+      <h2>Daily Time Limit (minutes)</h2>
+      <input type="number" id="timeLimit" min="0">
+    </div>
+
+    <button id="saveOptions">Save Options</button>
+    <div id="statusMessage"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

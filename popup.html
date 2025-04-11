@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Media & App Time Tracker</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script></head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Time Tracker</h1>
+      <div class="actions">
+        <button id="settingsBtn">⚙️</button>
+      </div>
+    </header>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="today">Today</button>
+      <button class="tab-btn" data-tab="week">This Week</button>
+      <button class="tab-btn" data-tab="goals">Goals</button>
+    </div>
+    
+    <div class="tab-content active" id="today-tab">
+      <div class="summary-card">
+        <div class="summary-item">
+          <span class="summary-label">Total Time</span>
+          <span class="summary-value" id="total-time-today">0m</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Social Media</span>
+          <span class="summary-value" id="social-time-today">0m</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Video</span>
+          <span class="summary-value" id="video-time-today">0m</span>
+        </div>
+      </div>
+      
+      <div class="chart-container">
+        <canvas id="todayChart"></canvas>
+      </div>
+      
+      <h3>Top Sites Today</h3>
+      <div id="today-sites-list" class="sites-list"></div>
+    </div>
+    
+    <div class="tab-content" id="week-tab">
+      <div class="summary-card">
+        <div class="summary-item">
+          <span class="summary-label">Week Total</span>
+          <span class="summary-value" id="total-time-week">0m</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Daily Avg</span>
+          <span class="summary-value" id="avg-time-week">0m</span>
+        </div>
+      </div>
+      
+      <div class="chart-container">
+        <canvas id="weekChart"></canvas>
+      </div>
+      
+      <h3>Weekly Breakdown</h3>
+      <div class="chart-container">
+        <canvas id="categoryWeekChart"></canvas>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="goals-tab">
+      <h3>Daily Goals</h3>
+      <div class="goals-container">
+        <div class="goal-item">
+          <div class="goal-info">
+            <span class="goal-label">Social Media</span>
+            <span class="goal-progress" id="social-goal-progress">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" id="social-progress" style="width: 0%"></div>
+          </div>
+        </div>
+        
+        <div class="goal-item">
+          <div class="goal-info">
+            <span class="goal-label">Video</span>
+            <span class="goal-progress" id="video-goal-progress">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" id="video-progress" style="width: 0%"></div>
+          </div>
+        </div>
+        
+        <div class="goal-item">
+          <div class="goal-info">
+            <span class="goal-label">All Usage</span>
+            <span class="goal-progress" id="all-goal-progress">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" id="all-progress" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="edit-goals">
+        <button id="editGoalsBtn">Edit Goals</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <button id="viewDetailsBtn">View Detailed Stats</button>
+  </footer>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

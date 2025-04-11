@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Social Media & App Time Tracker",
+  "version": "1.0",
+  "description": "Tracks time spent on social media and other specified apps.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

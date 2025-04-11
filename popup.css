@@ -1,0 +1,278 @@
+/* General Styles */
+:root {
+  --primary-color: #4a6cf7;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 380px;
+  min-height: 500px;
+  background-color: #f5f8ff;
+  color: #333;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 20px;
+  color: var(--dark-color);
+}
+
+.actions button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.actions button:hover {
+  transform: rotate(45deg);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--secondary-color);
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tab-btn:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+}
+
+.tab-btn.active:after {
+  transform: scaleX(1);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Summary Cards */
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+/* Chart Containers */
+.chart-container {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 16px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  height: 250px;  /* Add this line */
+}
+
+/* Sites List */
+.sites-list {
+  margin-bottom: 16px;
+}
+
+.site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 8px;
+}
+
+.site-info {
+  display: flex;
+  align-items: center;
+}
+
+.site-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+}
+
+.site-name {
+  font-weight: 500;
+}
+
+.site-time {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* Goals */
+.goals-container {
+  margin-bottom: 16px;
+}
+
+.goal-item {
+  margin-bottom: 16px;
+}
+
+.goal-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.goal-label {
+  font-weight: 500;
+}
+
+.goal-progress {
+  color: var(--secondary-color);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.progress.warning {
+  background-color: var(--warning-color);
+}
+
+.progress.danger {
+  background-color: var(--danger-color);
+}
+
+.edit-goals {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-goals button {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-goals button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Footer */
+footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+}
+
+footer button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+footer button:hover {
+  background-color: #3a57e8;
+}
+
+/* Utils */
+h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--dark-color);
+}
